@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar";
 import Sidebar from "@/components/sidebar";
 
+// Dashboard layout with navbar and sidebar components implemented 
 const DashboardLayout = ({
     children
 }: {

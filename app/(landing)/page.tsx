@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+// Landing page for user if they are not signed in
 const LandingPage = () => {
     return (
         <div>

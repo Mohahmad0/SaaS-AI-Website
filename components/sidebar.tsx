@@ -7,12 +7,15 @@ import { Montserrat } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, VideoIcon } from "lucide-react";
 
+// Implementation of sidebar 
 
+// Shadcn font for the website name in top left corner
 const montserrat = Montserrat ({
     weight: "600",
     subsets: ["latin"]
 });
 
+// Sidebar routes to navigate the webiste with ease
 const routes = [
     {
         label: "Dashboard",
@@ -58,8 +61,10 @@ const routes = [
 ];
 
 
+// Implementation of the sidebar sizing, color, logo, and hover effect 
 const Sidebar = () => {
     return (
+        // Sidebar size and color
         <div className="space-y-4 py-4 flex flex-col h-full bg-[#111827] text-white"> 
             <div className="px-3 py-2 flex-1">
                 <Link href="/dashboard" className="flex items-center pl-3 mb-14">

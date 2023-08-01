@@ -7,6 +7,9 @@ import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+// Imported code from shadcn ui that allows the use of a sheet animation when viewing the site on mobile
+
+
 const Sheet = SheetPrimitive.Root
 
 const SheetTrigger = SheetPrimitive.Trigger
