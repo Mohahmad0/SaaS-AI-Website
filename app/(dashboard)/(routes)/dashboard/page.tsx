@@ -44,7 +44,7 @@ const tools = [
     },
 ]
 
-// Dashboard Homepage that shows which tool the user is using
+// Dashboard Homepage that allows the user to pick what ai tool they would like to use
 // Card element from Shadcn
 const DashboardPage = () => {
     const router = useRouter();
