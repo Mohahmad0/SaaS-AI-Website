@@ -7,12 +7,17 @@ import Sidebar from "@/components/sidebar";
 import { useEffect, useState } from "react";
 
 const MobileSidebar = () => {
+    
     // below solves the hydration error when page is refreshed multiple times
     const[isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
         setIsMounted(true);
     }, []);
+
+    if (!isMounted){
+        return null;
+    }
 
     // implements sheet style from shadcn ui so you are able to open and close the sidebar
     // on mobile devices 
