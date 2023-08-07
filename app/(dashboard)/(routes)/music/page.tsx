@@ -9,7 +9,7 @@ import { ChatCompletionRequestMessage } from "openai";
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Music } from "lucide-react";
+import { MusicIcon } from "lucide-react";
 
 import { useRouter } from "next/navigation";
 
@@ -27,7 +27,7 @@ import { Loader } from "@/components/loader";
 // Conversations UI
 const MusicPage = () => {
     const router = useRouter();
-    const[Music, setMusic] = useState<string>();
+    const[music, setMusic] = useState<string>();
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -44,7 +44,6 @@ const MusicPage = () => {
 
             const response = await axios.post("/api/music", values);
 
-            
             setMusic(response.data.audio);
             form.reset();
         } catch (error: any) {
@@ -62,7 +61,7 @@ const MusicPage = () => {
             <Heading 
                 title="Music Generation"
                 description="Turn your prompt into music."
-                icon={Music}
+                icon={MusicIcon}
                 iconColor="text-emerald-500"
                 bgColor="bg-emerald-500/10"
             />
@@ -101,16 +100,19 @@ const MusicPage = () => {
                             <Loader />
                         </div>
                     )}
-                    {Messages.length === 0 && !isLoading && (
+                    {!music && !isLoading && (
                         <div>
                             <Empty
                             label="No music generated."
                             />
                         </div>
                     )}
-                    <div>
-                        Music will be generated here
-                    </div>
+                    {music && (
+                        <audio controls className="w-full mt-8">
+                            <source src={music}/>
+
+                        </audio>
+                    )}
                 </div>
             </div>
         </div>
