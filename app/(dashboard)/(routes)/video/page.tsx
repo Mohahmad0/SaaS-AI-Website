@@ -19,11 +19,13 @@ import { Heading } from "@/components/heading";
 import { Empty } from "@/components/empty";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Loader } from "@/components/loader";
+import { useProModel } from "@/hooks/use-pro-model";
 
 
 
 // Conversations UI
 const VideoPage = () => {
+    const proModel = useProModel();
     const router = useRouter();
     const[video, setVideo] = useState<string>();
 
@@ -45,8 +47,9 @@ const VideoPage = () => {
             setVideo(response.data[0]);
             form.reset();
         } catch (error: any) {
-            // TODO: open pro model
-          console.log(error);
+            if (error?.response?.status === 403) {
+                proModel.onOpen();
+            }
         } finally {
           router.refresh();
         }
