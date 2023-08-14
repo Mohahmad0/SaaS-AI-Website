@@ -5,9 +5,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const testimonials = [
     {
         name: "Dylan",
-        avatar: "A",
-        title: "Software Engineer",
-        description: "This app has transformed my workflow. It's a must-have for any software engineer."
+        avatar: "D",
+        title: "Graphic Designer",
+        description: "This app has transformed my creative process. It's a must-have for any graphic designer."
     },
     {
         name: "Andre",
@@ -25,7 +25,7 @@ const testimonials = [
         name: "Walter",
         avatar: "W",
         title: "Surveying Engineer",
-        description: "A game-changer for surveyors. Precision and efficiency like never before."
+        description: "A pivotal tool for surveyors. It's enhanced precision and efficiency in every aspect of my work."
     },
 ];
 
