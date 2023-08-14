@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
 import { ModelProvider } from '@/components/model-provider'
+import { ToasterProvider } from '@/components/toaster-provider'
 
 // landing page layout 
 
@@ -23,6 +24,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={inter.className}>
           <ModelProvider />
+          <ToasterProvider />
           {children}
           </body>
       </html>

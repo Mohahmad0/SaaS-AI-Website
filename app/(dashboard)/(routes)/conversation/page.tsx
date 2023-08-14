@@ -25,6 +25,7 @@ import { cn } from "@/lib/utils";
 import { UserAvatar } from "@/components/user-avatar";
 import { BotAvatar } from "@/components/bot-avatar";
 import { useProModel } from "@/hooks/use-pro-model";
+import { toast } from "react-hot-toast";
 
 
 // Conversations UI
@@ -60,6 +61,8 @@ const ConversationPage = () => {
         } catch (error: any) {
             if (error?.response?.status === 403) {
                 proModel.onOpen();
+            } else {
+                toast.error("Something went wrong")
             }
         } finally {
           router.refresh();

@@ -65,11 +65,13 @@ const routes = [
 
 interface SidebarProps {
     apiLimitCount: number;
+    isPro: boolean;
 };
 
 // Implementation of the sidebar sizing, color, logo, hover effect, and highlight to show what route you are currently on 
 const Sidebar = ({
-    apiLimitCount = 0
+    apiLimitCount = 0,
+    isPro = false,
 }: SidebarProps) => {
     const pathname = usePathname();
 
@@ -104,7 +106,8 @@ const Sidebar = ({
                     ))}
                 </div>
             </div>
-            <FreeCounter 
+            <FreeCounter
+                isPro={isPro}
                 apiLimitCount={apiLimitCount}
             />
         </div>
